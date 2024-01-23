@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge"> 
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LOGIN</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+    <link rel="stylesheet" href="{{ url_for('static', filename = 'css/estilos.css') }}">
+</head>
+<body>
+
+    <div class="wrapper">
+
+    
+        <div class="box sign-in">
+            
+            <form action="{{ url_for('login') }}" method="POST">
+                <h2> Iniciar Sesion </h2>
+                {% with messages = get_flashed_messages() %}
+                {% if messages %}
+                 <ul class = "messages" >
+                {% for  message in messages %}
+                <h3>{{ message }}</h3>
+                {% endfor %}
+                </ul>      
+            {% endif %}  
+            {% endwith %}
+                <div class="group sign-in">
+                    <input type="text" id = "Correo" name= "Correo" required>
+                    <label for="Correo">Usuario</label>
+                </div>
+
+                <div class="group Password">
+                    <input type="Password" id = "Password" name ="Password" required>
+                    <label for="Password">Password</label>
+                </div>
+
+                <div class="remember">
+                    <label> <input type="checkbox"> Recordar </label>
+                    <a href="{{ url_for('cambiar') }}"> Has olvidado tu password</a>
+                </div>
+                <div class="remember a">
+                    <a href= "{{ url_for('recuperar') }}" style="float: rigth; margin-left: 41%;"> Recuperar password</a>
+                </div>
+            
+                <button type="submit">Iniciar Sesion </button>
+                <div class="signup">
+                    <p>¿No tienes una cuenta? <a href="{{ url_for('registro') }} "> Registrarse </a></p>
+                </div>
+
+                <div class="plataform">
+                    <p> O iniciar sesion con </p>
+                    <div class="icons">
+                        <a href="#"><i class="fa-brands fa-facebook-f"></i></a>
+                        <a href="#"><i class="fa-brands fa-google"></i></a>
+                        <a href="#"><i class="fa-brands fa-twitter"></i></a>
+                        <a href="#"><i class="fa-brands fa-github"></i></a>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </form>   
+    </div>
+
+
+    
+</body>
+</html>
+

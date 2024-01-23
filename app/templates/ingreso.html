@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge"> 
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LOGIN</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+    <link rel="stylesheet" href="{{ url_for('static', filename = 'css/estilos.css') }}">
+</head>
+
+    <section>
+          <div class="box Ingreso">
+               <form action=""> 
+                   <h2>¡Ingreso Exitoso! </h2>
+                   <div class="input-Grupo">
+                   <h2>Bienvenido</h2>
+                   </div>
+               <div class="signup">
+                     <a href="{{ url_for('login') }}"> Volver a Iniciar </a>
+               </div>
+             </form>
+            </div>
+     </section>

@@ -1,0 +1,43 @@
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Recuperar Contraseña</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename = 'css/recuperar.css' ) }}">
+</head>
+<body>
+
+    <section>
+        <div class="box Recuperar">
+            <form action="{{ url_for('recuperar')}}" method="POST"> 
+                <h2>Recuperar Password </h2>
+                {% with messages = get_flashed_messages() %}
+                {% if messages %}
+                 <ul class = "messages" >
+                {% for  message in messages %}
+                <h3>{{ message }}</h3>
+                {% endfor %}
+                </ul>      
+               {% endif %}  
+                {% endwith %}
+                <div class="input-Grupo">
+                    <input type="text" name="Correo" required>
+                    <label for="Correo"> Correo </label>
+                </div>
+    
+                <button type="submit">Enviar</button>
+                <div class="signup">
+                    <p>¿Ya tienes una cuenta?
+                    <a href="{{ url_for('login') }}"> Iniciar sesion </a>
+                   </p>
+                </div>
+            </form>
+        </div>
+    </section>
+    
+</body>
+</html>
+

@@ -1,0 +1,50 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cambiar Password</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename = 'css/cambiar.css') }}">
+</head>
+<body>
+    
+  <section>
+
+    <div class="box Cambiar">
+        <form action="/cambiar" method="POST"> 
+            <h2>Cambiar Password </h2>
+            {% with messages = get_flashed_messages() %}
+                {% if messages %}
+                 <ul class = "messages" >
+                {% for  message in messages %}
+                <h3>{{ message }}</h3>
+                {% endfor %}
+                </ul>      
+            {% endif %}  
+            {% endwith %}
+            <div class="input-Grupo">
+                <input type="text" required>
+                <label for=""> Correo </label>
+            </div>
+
+            <div class="input-Grupo">
+                <input type="password" name="antes_password" required>
+                <label for="antes_password"> Actual password </label>
+            </div>
+
+            <div class="input-Grupo">
+                <input type="password" name="nueva_password" required>
+                <label for="nueva_password"> Nueva password </label>
+            </div>
+            <button type="submit">Aceptar</button>
+            <div class="signup">
+                <a href="{{ url_for('login') }}"> Regresar a Inicio</a>
+            </div>
+        </form>
+    </div>
+  </section>
+    
+
+</body>
+</html>

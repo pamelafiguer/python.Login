@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registrarse</title>
+    <link rel="stylesheet" href="{{ url_for('static' , filename = 'css/registrase.css') }}">
+</head>
+<body>
+    
+  <section>
+    <div class="box sign-up">
+        <form action="" method = "POST"> 
+            <h2> Registrarse </h2>
+            {% with messages = get_flashed_messages() %}
+                {% if messages %}
+                <ul class="messages">
+                {% for message in messages %}
+                    <h3>{{ message }}</h36>
+                {% endfor %}
+                </ul>
+                {% endif %}
+            {% endwith %}
+            <div class="Grupo">
+                <input type="text" id = "Nombres" name = "Nombres" required>
+                <label for=""> Nombre de Usuario </label>
+            </div>
+
+            <div class="Grupo">
+                <input type="Correo" id = "Correo" name = "Correo" required>
+                <label for=""> Correo </label>
+            </div>
+
+            <div class="Grupo">
+                <input type="Password" id = "Password" name = "Password" required>
+                <label for=""> Password </label>
+            </div>
+
+            <div class="remember">
+                <label> <input type="checkbox"> Acepto los terminos y condiciones </label>
+            </div>
+
+            <button type="submit"> Ingresar </button>
+            <div class="signup">
+                <p> ¿Ya tienes una cuenta? <a href="{{ url_for('login') }}"> Iniciar Sesion </a> </p>
+            </div>
+        </form>
+    </div>
+  </section>
+    
+</body>
+</html>
